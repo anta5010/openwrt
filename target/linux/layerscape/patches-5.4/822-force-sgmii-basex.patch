@@ -1,0 +1,18 @@
+Index: linux-4.9.111/drivers/net/ethernet/freescale/sdk_fman/Peripherals/FM/MAC/memac.c
+===================================================================
+--- linux-4.9.111.orig/drivers/net/ethernet/freescale/sdk_fman/Peripherals/FM/MAC/memac.c
++++ linux-4.9.111/drivers/net/ethernet/freescale/sdk_fman/Peripherals/FM/MAC/memac.c
+@@ -889,10 +889,10 @@ static t_Error MemacInitInternalPhy(t_Ha
+     if (ENET_INTERFACE_FROM_MODE(p_Memac->enetMode) == e_ENET_IF_SGMII)
+     {
+         /* Configure internal SGMII PHY */
+-        if (p_Memac->enetMode & ENET_IF_SGMII_BASEX)
++        //if (p_Memac->enetMode & ENET_IF_SGMII_BASEX)
+             SetupSgmiiInternalPhyBaseX(p_Memac, PHY_MDIO_ADDR);
+-        else
+-            SetupSgmiiInternalPhy(p_Memac, PHY_MDIO_ADDR);
++        //else
++        //    SetupSgmiiInternalPhy(p_Memac, PHY_MDIO_ADDR);
+     }
+     else if (ENET_INTERFACE_FROM_MODE(p_Memac->enetMode) == e_ENET_IF_QSGMII)
+     {

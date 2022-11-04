@@ -265,12 +265,13 @@
 	 * phy-handle = <&rgmii_phy1>;
 	 */
 	EMAC4: ethernet@e4000 {
-		phy-connection-type = "rgmii";
-		local-mac-address = [0A 00 00 00 00 05];
+		phy-connection-type = "rgmii-id";
+		/* local-mac-address = [0A 00 00 00 00 05];
 		fixed-link {
 			speed = <1000>;
 			full-duplex;
-		};
+		}; */
+		phy-handle = <&rgmii_phy1>;
 	};
 
 	/* Connection to Expansion (M.2) slot
@@ -291,9 +292,9 @@
 	 */
 	TENSFP: ethernet@f0000 {
 		status = "okay";
-		phy-connection-type = "xgmii";
+		phy-connection-type = "sgmii";
 		fixed-link {
-			speed = <10000>;
+			speed = <1000>;
 			full-duplex;
 		};
 	};
